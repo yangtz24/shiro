@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.security.repository.RoleMapper">
+
+    <select id="findUserRolesByUserId" resultType="com.security.model.Role">
+        select * from role where id in (select rid from user_role where uid = #{id,jdbcType=INTEGER} )
+    </select>
+
+
+</mapper>
