@@ -2,6 +2,8 @@ package com.ytz.leetcode.node;
 
 import lombok.*;
 
+import java.util.List;
+
 /**
  * @ClassName: TreeNode
  * @Description: TODO
@@ -24,6 +26,9 @@ public class TreeNode {
     private TreeNode leftTreeNode;
     // 右子树
     private TreeNode rightTreeNode;
+
+    // 孩子节点
+    private List<TreeNode> children;
 
     public TreeNode(int val) {
         this.value = val;

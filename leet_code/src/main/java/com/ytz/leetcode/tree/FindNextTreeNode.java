@@ -18,18 +18,16 @@ import com.ytz.leetcode.node.TreeNode;
 public class FindNextTreeNode {
 
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        if (root == null) {
+        if (root == null || p == null) {
             return null;
         }
 
-        if (p == null) {
-            return null;
-        }
-
+        // 如果当前节点的值大于等于root节点的值，则继续查找右子树，否则， 查找左子树
         if (p.getValue() >= root.getValue()) {
             return inorderSuccessor(root.getRightTreeNode(), p);
         } else {
             TreeNode leftTreeNode = inorderSuccessor(root.getLeftTreeNode(), p);
+            // 遍历查找左子树，如果返回不等于空，则直接返回结果，否则，直接返回root本身
             if (leftTreeNode != null) {
                 return leftTreeNode;
             } else {
