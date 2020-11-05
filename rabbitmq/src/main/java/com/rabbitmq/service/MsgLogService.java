@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @ClassName: MsgLogService
- * @Description:  消息发送失败处理 日志记录
+ * @Description: 消息发送失败处理 日志记录
  * @author: yangtianzeng
  * @date: 2020/4/4 10:08
  */
@@ -19,12 +19,14 @@ public interface MsgLogService {
 
     /**
      * 插入消息日志
+     *
      * @param msgLog
      */
     void insert(MsgLog msgLog);
 
     /**
      * 更新消息状态
+     *
      * @param msgId
      * @param status
      */
@@ -32,6 +34,7 @@ public interface MsgLogService {
 
     /**
      * 查询消息
+     *
      * @param msgId
      * @return
      */
@@ -39,12 +42,14 @@ public interface MsgLogService {
 
     /**
      * 查询超时消息
+     *
      * @return
      */
     List<MsgLog> selectTimeoutMsg();
 
     /**
      * 更新重试次数
+     *
      * @param msgId
      * @param tryTime
      */

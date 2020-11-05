@@ -2,7 +2,9 @@ package com.sihai.mapper;
 
 import com.sihai.pojo.User;
 import com.sihai.pojo.UserExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {

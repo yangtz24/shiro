@@ -7,11 +7,9 @@ import java.nio.ByteBuffer;
 /**
  * @ClassName: BufferDemo1
  * @Description: 缓冲区 效率
- *
- *              直接缓冲区：通过allocateDirect()方法分配直接缓冲区， 将缓冲区建立在物理内存中，可提高效率
- *              非直接缓冲区：通过allocate()方法分配直接缓冲区，将缓冲区建立在JVM的内存中
- *
- *
+ * <p>
+ * 直接缓冲区：通过allocateDirect()方法分配直接缓冲区， 将缓冲区建立在物理内存中，可提高效率
+ * 非直接缓冲区：通过allocate()方法分配直接缓冲区，将缓冲区建立在JVM的内存中
  * @author: yangtianzeng
  * @date: 2020/3/22 11:25
  */

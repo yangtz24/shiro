@@ -11,7 +11,7 @@ import org.springframework.amqp.core.MessageProperties;
  * @author: yangtianzeng
  * @date: 2020/4/4 9:29
  */
-public class MessageHelper{
+public class MessageHelper {
     public static Message objToMsg(Object obj) {
         if (null == obj) {
             return null;

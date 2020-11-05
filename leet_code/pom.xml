@@ -6,11 +6,21 @@
     <modules>
         <module>../spring-test</module>
         <module>../redis-cache</module>
+        <module>../websocket</module>
+        <module>../cloud-provider-user</module>
+        <module>../cloud_client</module>
+        <module>../cloud_consumer</module>
+        <module>../cloud_server</module>
+        <module>../mail</module>
+        <module>../maven-ssm-alipay</module>
+        <module>../rabbitmq</module>
+        <module>../security-project</module>
+        <module>../shiro-learn</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.3.RELEASE</version>
+        <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ytz</groupId>

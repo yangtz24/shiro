@@ -19,32 +19,29 @@ import java.util.SortedMap;
 /**
  * @ClassName: TestChannel
  * @Description: 通道
- *          Channel:用于源节点雨目标节点的连接，负责缓冲区的数据传输。本身不存储数据
- *          Channel接口实现类：
- *              --FileChannel
- *              --SocketChannel
- *              --ServerSocketChannel
- *              --DatagramChannel
- *
- *          获取通道：
- *              1. getChannel()
- *              2. open()  jdk7 静态方法
- *              3. newByteChannel()  jdk7的Files工具类
- *
- *          通道之间数据传输：
- *              1. transferTo()
- *              2. transferFrom()
- *
- *          分散 与 聚集
- *              分散读取：将通道中的数据分散到多个缓冲区
- *              聚集写入：将多个缓冲区数据聚集到通道中
- *
- *          字符集：
- *              编码：字符串 -> 字节数组
- *              解码： 字节数组 -> 字符串
- *
- *
- *
+ * Channel:用于源节点雨目标节点的连接，负责缓冲区的数据传输。本身不存储数据
+ * Channel接口实现类：
+ * --FileChannel
+ * --SocketChannel
+ * --ServerSocketChannel
+ * --DatagramChannel
+ * <p>
+ * 获取通道：
+ * 1. getChannel()
+ * 2. open()  jdk7 静态方法
+ * 3. newByteChannel()  jdk7的Files工具类
+ * <p>
+ * 通道之间数据传输：
+ * 1. transferTo()
+ * 2. transferFrom()
+ * <p>
+ * 分散 与 聚集
+ * 分散读取：将通道中的数据分散到多个缓冲区
+ * 聚集写入：将多个缓冲区数据聚集到通道中
+ * <p>
+ * 字符集：
+ * 编码：字符串 -> 字节数组
+ * 解码： 字节数组 -> 字符串
  * @author: yangtianzeng
  * @date: 2020/3/22 13:16
  */
@@ -133,7 +130,7 @@ public class TestChannel {
         FileChannel outChannel = FileChannel.open(Paths.get("3.jpg"), StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.READ);
 
         inChannel.transferTo(0, inChannel.size(), outChannel);
-        outChannel.transferFrom(inChannel, 0 , inChannel.size());
+        outChannel.transferFrom(inChannel, 0, inChannel.size());
 
         inChannel.close();
         outChannel.close();
@@ -187,12 +184,12 @@ public class TestChannel {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            try{
-                if(fis != null) fis.close();
-                if(fos != null) fos.close();
-                if(inChannel != null) inChannel.close();
-                if(outChannel != null) outChannel.close();
-            }catch (Exception e) {
+            try {
+                if (fis != null) fis.close();
+                if (fos != null) fos.close();
+                if (inChannel != null) inChannel.close();
+                if (outChannel != null) outChannel.close();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

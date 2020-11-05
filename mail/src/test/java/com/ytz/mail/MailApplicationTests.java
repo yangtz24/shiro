@@ -1,6 +1,6 @@
 package com.ytz.mail;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.FileSystemResource;
@@ -14,7 +14,7 @@ import java.io.File;
 import java.util.Date;
 
 @SpringBootTest
- public class MailApplicationTests {
+public class MailApplicationTests {
 
     @Autowired
     JavaMailSender javaMailSender;
@@ -35,6 +35,7 @@ import java.util.Date;
 
     /**
      * 带附件发送
+     *
      * @throws MessagingException
      */
     @Test
@@ -53,6 +54,7 @@ import java.util.Date;
 
     /**
      * 正文中带图片
+     *
      * @throws MessagingException
      */
     @Test

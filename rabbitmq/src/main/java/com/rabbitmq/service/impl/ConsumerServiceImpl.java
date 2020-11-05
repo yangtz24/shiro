@@ -21,7 +21,7 @@ import java.io.IOException;
 
 /**
  * @ClassName: ConsumerServiceImpl
- * @Description:  1.保证消费幂等性, 2.发送邮件, 3.更新消息状态, 手动ack
+ * @Description: 1.保证消费幂等性, 2.发送邮件, 3.更新消息状态, 手动ack
  * @author: yangtianzeng
  * @date: 2020/4/4 9:38
  */
@@ -46,7 +46,7 @@ public class ConsumerServiceImpl implements ConsumerService {
         //消费幂等性，如果出现已经消费，则不在重复发送
         String msgId = mail.getMsgId();
         MsgLog msgLog = msgLogService.selectByMsgId(msgId);
-        if (ObjectUtil.isEmpty(msgLog) ||  Constant.MsgLogStatus.CONSUMED_SUCCESS.equals(msgLog.getStatus())) {
+        if (ObjectUtil.isEmpty(msgLog) || Constant.MsgLogStatus.CONSUMED_SUCCESS.equals(msgLog.getStatus())) {
             log.info("重复消费, msgId: {}", msgId);
             return;
         }

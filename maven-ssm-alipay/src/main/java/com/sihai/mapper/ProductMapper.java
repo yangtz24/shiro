@@ -2,7 +2,9 @@ package com.sihai.mapper;
 
 import com.sihai.pojo.Product;
 import com.sihai.pojo.ProductExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface ProductMapper {

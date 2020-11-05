@@ -8,17 +8,17 @@ import java.nio.ByteBuffer;
 /**
  * @ClassName: TestBuffer
  * @Description: 缓冲区(buffer) 用于存储不同类型的数据
- *      ByteBuffer/CharBuffer/ShortBuffer/IntBuffer/LongBuffer/FloatBuffer/DoubleBuffer
- *      通过  allocate()方法获取缓冲区
- *     缓冲区两个核心方法
- *              1. put(): 存入数据到缓冲区
- *              2. get(): 获取缓冲区的数据
- *     缓冲区核心属性：
- *          capacity：容量，表示缓冲区最大存储量，一旦声明不能改变
- *          limit: 界限，表示缓冲区可操作数据的大小
- *          position: 位置，表示正在操作数据的位置
- *          mark： 标记位置   记录position位置。可通过 reset() 恢复到mark的位置
- *            0 <= mark <= position <=limit <= capacity
+ * ByteBuffer/CharBuffer/ShortBuffer/IntBuffer/LongBuffer/FloatBuffer/DoubleBuffer
+ * 通过  allocate()方法获取缓冲区
+ * 缓冲区两个核心方法
+ * 1. put(): 存入数据到缓冲区
+ * 2. get(): 获取缓冲区的数据
+ * 缓冲区核心属性：
+ * capacity：容量，表示缓冲区最大存储量，一旦声明不能改变
+ * limit: 界限，表示缓冲区可操作数据的大小
+ * position: 位置，表示正在操作数据的位置
+ * mark： 标记位置   记录position位置。可通过 reset() 恢复到mark的位置
+ * 0 <= mark <= position <=limit <= capacity
  * @author: yangtianzeng
  * @date: 2020/3/22 10:46
  */
@@ -36,7 +36,7 @@ public class TestBuffer {
 
         byte[] bytes = new byte[buffer.limit()];
         buffer.get(bytes, 0, 2);
-        System.out.println(new String(bytes, 0 , 2));
+        System.out.println(new String(bytes, 0, 2));
         System.out.println(buffer.position());
 
         //标记
@@ -44,7 +44,7 @@ public class TestBuffer {
         System.out.println(mark);
 
         buffer.get(bytes, 2, 2);
-        System.out.println(new String(bytes, 2 , 2));
+        System.out.println(new String(bytes, 2, 2));
         System.out.println(buffer.position());
 
 
@@ -54,15 +54,12 @@ public class TestBuffer {
         System.out.println(buffer.position());
 
         //判断缓冲区是否还有数据
-        if(buffer.hasRemaining()) {
+        if (buffer.hasRemaining()) {
             //获取剩余数据
             System.out.println(buffer.remaining());
         }
 
     }
-
-
-
 
 
     @Test

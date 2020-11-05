@@ -12,6 +12,7 @@ public interface ProduceService {
 
     /**
      * 发送邮件
+     *
      * @param mail
      * @return
      */

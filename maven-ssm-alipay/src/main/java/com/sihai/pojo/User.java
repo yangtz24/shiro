@@ -31,9 +31,9 @@ public class User {
         this.sex = sex == null ? null : sex.trim();
     }
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", sex=" + sex + "]";
-	}
-    
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", username=" + username + ", sex=" + sex + "]";
+    }
+
 }

@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * @ClassName: ResendMsg
- * @Description:  MQ挂掉，消息发送失败 利用定数任务对消息投递失败进行补偿
+ * @Description: MQ挂掉，消息发送失败 利用定数任务对消息投递失败进行补偿
  * @author: yangtianzeng
  * @date: 2020/4/4 11:02
  */

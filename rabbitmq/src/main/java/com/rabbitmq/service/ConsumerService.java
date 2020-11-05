@@ -14,7 +14,8 @@ import java.io.IOException;
 public interface ConsumerService {
 
     /**
-     *  消费者 消息
+     * 消费者 消息
+     *
      * @param message
      * @param channel
      * @throws IOException
