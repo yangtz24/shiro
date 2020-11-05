@@ -4,12 +4,11 @@ import com.ytz.leetcode.node.TreeNode;
 
 /**
  * @ClassName: CheckValidBSTree
- * @Description:
- *              TODO  实现一个函数，检查一棵二叉树是否为二叉搜索树。
- *                  条件：
- *                  1、所有左子树节点的值均小于根节点
- *                  2、所有右子树节点的值均大于根节点
- *                  3、中序遍历节点的值呈递增趋势
+ * @Description: TODO  实现一个函数，检查一棵二叉树是否为二叉搜索树。
+ * 条件：
+ * 1、所有左子树节点的值均小于根节点
+ * 2、所有右子树节点的值均大于根节点
+ * 3、中序遍历节点的值呈递增趋势
  * @author: yangtz
  * @date: 2020/8/25
  * @Version: V1.0

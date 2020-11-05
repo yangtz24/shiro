@@ -10,7 +10,7 @@ import java.util.UUID;
 
 /**
  * @ClassName: DelayMsgQueue
- * @Description:  封装一个消息队列
+ * @Description: 封装一个消息队列
  * @author: yangtianzeng
  * @date: 2020/3/27 9:30
  */
@@ -25,8 +25,9 @@ public class DelayMsgQueue {
     }
 
     /**
-     *  消息入队
-     * @param data  要发送的消息
+     * 消息入队
+     *
+     * @param data 要发送的消息
      */
     public void queue(Object data) {
 
@@ -64,11 +65,11 @@ public class DelayMsgQueue {
 
             //如果获取到了消息，则读取消息
             String message = msgs.iterator().next();
-            if (jedis.zrem(queue,message) > 0) {
+            if (jedis.zrem(queue, message) > 0) {
                 //抢到了，接下来 处理业务
                 try {
                     StudentMessage msg = new ObjectMapper().readValue(message, StudentMessage.class);
-                    System.out.println("receive msg:" +new Date()+ msg);
+                    System.out.println("receive msg:" + new Date() + msg);
                 } catch (JsonProcessingException e) {
                     e.printStackTrace();
                 }

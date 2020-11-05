@@ -9,13 +9,12 @@ import java.util.Queue;
 
 /**
  * @ClassName: TreeTraversal
- * @Description:
- *              TODO 给定一个 N 叉树，返回其节点值的前序遍历。
- *                  条件：
- *                     1、先序遍历：根->左子树->右子树
- *                     2、中序遍历：左子树->根->右子树
- *                     3、后序遍历：左子树->右子树->根
- *                     4、递归执行
+ * @Description: TODO 给定一个 N 叉树，返回其节点值的前序遍历。
+ * 条件：
+ * 1、先序遍历：根->左子树->右子树
+ * 2、中序遍历：左子树->根->右子树
+ * 3、后序遍历：左子树->右子树->根
+ * 4、递归执行
  * @author: yangtz
  * @date: 2020/8/26
  * @Version: V1.0
@@ -41,6 +40,7 @@ public class TreeTraversal {
 
     /**
      * 先序遍历
+     *
      * @param root
      * @return
      */
@@ -51,6 +51,7 @@ public class TreeTraversal {
 
     /**
      * 先序遍历
+     *
      * @param root
      */
     public void handlePreorder(TreeNode root) {
@@ -68,6 +69,7 @@ public class TreeTraversal {
 
     /**
      * 中序遍历
+     *
      * @param root
      * @return
      */
@@ -78,6 +80,7 @@ public class TreeTraversal {
 
     /**
      * 中序遍历
+     *
      * @param root
      */
     public void handleInorder(TreeNode root) {
@@ -92,6 +95,7 @@ public class TreeTraversal {
 
     /**
      * 后序遍历
+     *
      * @param root
      * @return
      */
@@ -102,6 +106,7 @@ public class TreeTraversal {
 
     /**
      * 后序遍历
+     *
      * @param root
      */
     public void handlePostorder(TreeNode root) {
@@ -142,17 +147,15 @@ public class TreeTraversal {
         TreeTraversal treeTraversal = new TreeTraversal();
         //以数组形式生成一棵完全二叉树
         TreeNode[] node = new TreeNode[10];
-        for(int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             node[i] = new TreeNode(i);
         }
-        for(int i = 0; i < 10; i++)
-        {
-            if(i * 2 + 1 < 10) {
-                node[i].setLeftTreeNode(node[i*2+1]);
+        for (int i = 0; i < 10; i++) {
+            if (i * 2 + 1 < 10) {
+                node[i].setLeftTreeNode(node[i * 2 + 1]);
             }
-            if(i * 2 + 2 < 10) {
-                node[i].setRightTreeNode(node[i*2+2]);
+            if (i * 2 + 2 < 10) {
+                node[i].setRightTreeNode(node[i * 2 + 2]);
             }
         }
 

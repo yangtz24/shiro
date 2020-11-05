@@ -1,19 +1,17 @@
 package com.redis.cache.lock;
 
-import org.springframework.beans.factory.annotation.Value;
 import redis.clients.jedis.Jedis;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName: RedisDistributedLockTest
- * @Description:  以秒杀库存数量为场景，测试下上面实现的分布式锁的效果
+ * @Description: 以秒杀库存数量为场景，测试下上面实现的分布式锁的效果
  * @author: yangtianzeng
  * @date: 2020/3/24 16:09
  */
 public class RedisDistributedLockTest {
 
     private static int n = 500;
+
     public static void secondsKill() {
         System.out.println(--n);
     }

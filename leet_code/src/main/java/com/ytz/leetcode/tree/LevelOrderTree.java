@@ -6,12 +6,11 @@ import java.util.*;
 
 /**
  * @ClassName: LevelOrderTree
- * @Description:
- *              TODO 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
- *                  从上至下 打印（即按层打印），又称为二叉树的 广度优先搜索（BFS）。
- *                  例如：
- *                      【3,9,2,null,null,1,7】---->[3,9,2,1,7]
- *                    根据队列的先进先出规则实现
+ * @Description: TODO 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
+ * 从上至下 打印（即按层打印），又称为二叉树的 广度优先搜索（BFS）。
+ * 例如：
+ * 【3,9,2,null,null,1,7】---->[3,9,2,1,7]
+ * 根据队列的先进先出规则实现
  * @author: yangtz
  * @date: 2020/8/27
  * @Version: V1.0
@@ -20,6 +19,7 @@ public class LevelOrderTree {
 
     /**
      * BFS广度优先搜索1
+     *
      * @param root
      * @return
      */
@@ -53,6 +53,7 @@ public class LevelOrderTree {
 
     /**
      * BFS广度优先搜索，每一层打印到一行
+     *
      * @param root
      * @return
      */

@@ -2,9 +2,7 @@ package com.redis.cache.lock;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
 
 import java.util.Collections;
 import java.util.UUID;
@@ -13,11 +11,11 @@ import java.util.concurrent.TimeUnit;
 /**
  * @ClassName: RedisDistributedLock
  * @Description: 分布式锁
- *              加锁操作的正确姿势为：
- *                  使用setnx命令保证互斥性
- *                  需要设置锁的过期时间，避免死锁
- *                  setnx和设置过期时间需要保持原子性，避免在设置setnx成功之后在设置过期时间客户端崩溃导致死锁
- *                  加锁的Value 值为一个唯一标示。可以采用UUID作为唯一标示。加锁成功后需要把唯一标示返回给客户端来用来客户端进行解锁操作
+ * 加锁操作的正确姿势为：
+ * 使用setnx命令保证互斥性
+ * 需要设置锁的过期时间，避免死锁
+ * setnx和设置过期时间需要保持原子性，避免在设置setnx成功之后在设置过期时间客户端崩溃导致死锁
+ * 加锁的Value 值为一个唯一标示。可以采用UUID作为唯一标示。加锁成功后需要把唯一标示返回给客户端来用来客户端进行解锁操作
  * 　　         解锁的正确姿势为：
  * 　　               1. 需要拿加锁成功的唯一标示要进行解锁，从而保证加锁和解锁的是同一个客户端
  * 　　               2. 解锁操作需要比较唯一标示是否相等，相等再执行删除操作。这2个操作可以采用Lua脚本方式使2个命令的原子性。
@@ -39,7 +37,8 @@ public class RedisDistributedLock implements DistributedLock {
     private int acquireTimeout = 1 * 1000;//锁等待，防止线程饥饿 1s
 
     /**
-     *  获取指定键值的锁
+     * 获取指定键值的锁
+     *
      * @param jedis
      * @param lockKey
      */
@@ -50,11 +49,12 @@ public class RedisDistributedLock implements DistributedLock {
 
     /**
      * 获取指定键值的锁,同时设置获取锁超时时间
-     * @param jedis jedis Redis客户端
-     * @param lockKey 锁的键值
+     *
+     * @param jedis          jedis Redis客户端
+     * @param lockKey        锁的键值
      * @param acquireTimeout 获取锁超时时间
      */
-    public RedisDistributedLock(Jedis jedis,String lockKey, int acquireTimeout) {
+    public RedisDistributedLock(Jedis jedis, String lockKey, int acquireTimeout) {
         this.jedis = jedis;
         this.lockKey = lockKey;
         this.acquireTimeout = acquireTimeout;
@@ -62,10 +62,11 @@ public class RedisDistributedLock implements DistributedLock {
 
     /**
      * 获取指定键值的锁,同时设置获取锁超时时间和锁过期时间
-     * @param jedis jedis Redis客户端
-     * @param lockKey 锁的键值
+     *
+     * @param jedis          jedis Redis客户端
+     * @param lockKey        锁的键值
      * @param acquireTimeout 获取锁超时时间
-     * @param expireTime 锁失效时间
+     * @param expireTime     锁失效时间
      */
     public RedisDistributedLock(Jedis jedis, String lockKey, int acquireTimeout, int expireTime) {
         this.jedis = jedis;
@@ -84,7 +85,8 @@ public class RedisDistributedLock implements DistributedLock {
             //3.判断 当前系统时间是否小于 锁的超时时间
             while (System.currentTimeMillis() < endTime) {
                 // set key value ex 5 nx
-                String result = jedis.set(lockKey, value, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);
+//                String result = jedis.set(lockKey, value, SET_IF_NOT_EXIST, SET_WITH_EXPIRE_TIME, expireTime);
+                String result = jedis.set(lockKey, value);
                 if (LOCK_SUCCESS.equals(result)) {
                     return value;
                 }
@@ -103,7 +105,7 @@ public class RedisDistributedLock implements DistributedLock {
 
     @Override
     public boolean release(String identify) {
-        if (identify == null ) {
+        if (identify == null) {
             return false;
         }
 
@@ -117,7 +119,7 @@ public class RedisDistributedLock implements DistributedLock {
                 return true;
             }
         } catch (Exception e) {
-            LOGGER.error("release lock due to error",e);
+            LOGGER.error("release lock due to error", e);
         } finally {
             if (jedis != null) {
                 jedis.close();

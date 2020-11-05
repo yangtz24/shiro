@@ -2,13 +2,13 @@ package com.redis.cache.message;
 
 /**
  * @ClassName: StudentMessage
- * @Description:  消息对象
+ * @Description: 消息对象
  * @author: yangtianzeng
  * @date: 2020/3/27 9:28
  */
 public class StudentMessage {
-        private String id;
-        private Object data;
+    private String id;
+    private Object data;
 
     @Override
     public String toString() {

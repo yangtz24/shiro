@@ -25,6 +25,7 @@ public class SnowFlakeController {
 
     /**
      * 测试生成雪花算法
+     *
      * @return
      */
     @GetMapping("")
