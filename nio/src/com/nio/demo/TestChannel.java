@@ -2,7 +2,6 @@ package com.nio.demo;
 
 import org.junit.Test;
 
-import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.MappedByteBuffer;
