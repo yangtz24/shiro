@@ -1,11 +1,11 @@
 package com.sihai.wx.util;
 
-import java.io.InputStream;
-
 import com.sihai.wx.entity.PayResult;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import com.thoughtworks.xstream.io.xml.XmlFriendlyNameCoder;
+
+import java.io.InputStream;
 
 public class XmlUtil {
 //	private static XStream xstream;

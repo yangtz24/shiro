@@ -1,16 +1,5 @@
 package com.sihai.wx.service.impl;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.stereotype.Service;
-
 import com.sihai.utils.WeChatIDKEY;
 import com.sihai.wx.config.WeChatConfig;
 import com.sihai.wx.entity.PayResult;
@@ -20,6 +9,15 @@ import com.sihai.wx.service.WxOrderService;
 import com.sihai.wx.util.HttpUtil;
 import com.sihai.wx.util.Sign;
 import com.sihai.wx.util.XmlUtil;
+import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.UUID;
 
 @Service
 public class WxOrderServiceImpl implements WxOrderService {

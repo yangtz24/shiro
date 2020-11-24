@@ -1,8 +1,8 @@
 package com.sihai.service;
 
-import java.util.List;
-
 import com.sihai.pojo.Product;
+
+import java.util.List;
 
 public interface ProductService {
 

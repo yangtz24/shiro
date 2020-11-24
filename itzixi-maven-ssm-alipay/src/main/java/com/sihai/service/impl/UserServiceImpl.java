@@ -1,14 +1,13 @@
 package com.sihai.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.sihai.mapper.UserMapper;
 import com.sihai.pojo.User;
 import com.sihai.pojo.UserExample;
 import com.sihai.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service("userService")
 public class UserServiceImpl implements UserService {

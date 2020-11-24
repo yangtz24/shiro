@@ -3,7 +3,6 @@ package org.n3r.idworker.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
 import java.util.Properties;
 
 import static java.io.File.separator;

@@ -2,10 +2,9 @@ package com.sihai.mapper;
 
 import com.sihai.pojo.Flow;
 import com.sihai.pojo.FlowExample;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
 
 public interface FlowMapper {
     int countByExample(FlowExample example);

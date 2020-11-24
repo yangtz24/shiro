@@ -1,9 +1,9 @@
 package com.sihai.wx.service;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.sihai.wx.entity.PayResult;
 import com.sihai.wx.entity.PreOrderResult;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author leechenxiang

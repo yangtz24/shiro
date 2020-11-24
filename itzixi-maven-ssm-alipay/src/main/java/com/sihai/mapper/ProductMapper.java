@@ -2,10 +2,9 @@ package com.sihai.mapper;
 
 import com.sihai.pojo.Product;
 import com.sihai.pojo.ProductExample;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
 
 public interface ProductMapper {
     int countByExample(ProductExample example);
