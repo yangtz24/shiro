@@ -18,7 +18,9 @@ public class MajorityElement {
     public static void main(String[] args) {
         int[] arr = new int[]{1,1,1,2,2,3,3,3};
         List<Integer> integers = majorityElement(arr);
+        List<Integer> integers1 = majorityElement1(arr);
         integers.forEach(System.out::println);
+        integers1.forEach(System.out::println);
     }
 
     /**
