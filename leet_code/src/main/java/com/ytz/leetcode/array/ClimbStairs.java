@@ -1,25 +1,24 @@
 package com.ytz.leetcode.array;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Nancal.com Inc.
  * Copyright (c) 2021- All Rights Reserved.
  *
  * @Author yangtz
  * @Date 2021/10/14 14:34
- * @Description
+ * @Description 爬楼梯
+ *
+ * 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+ *
+ * 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢
  */
 public class ClimbStairs {
 
     public static void main(String[] args) {
-        System.out.println(climbStairs(45));
+        System.out.println(climbStairs(4));
     }
 
     public static int climbStairs(int n) {
-
-        Map<Integer, Integer> map = new HashMap<>(100);
 
         if (n == 1) {
             return 1;
@@ -29,10 +28,6 @@ public class ClimbStairs {
             return 2;
         }
 
-//        map.put(n, climbStairs(n-1) + climbStairs(n-2));
-//        if (map.containsKey(n)) {
-//            return map.get(n);
-//        }
         return climbStairs(n-1) + climbStairs(n-2);
     }
 }

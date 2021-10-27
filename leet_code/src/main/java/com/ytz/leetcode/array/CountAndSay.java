@@ -9,12 +9,18 @@ package com.ytz.leetcode.array;
  *
  * @Author yangtz
  * @Date 2021/10/15 10:15
- * @Description
+ * @Description 外观数列
+ *
+ * 1.     1
+ * 2.     11
+ * 3.     21
+ * 4.     1211
+ * 5.     111221
  */
 public class CountAndSay {
 
     public static void main(String[] args) {
-//        System.out.println(countAndSay(4));
+        System.out.println(countAndSay(4));
         System.out.println(countAndSay2(4));
     }
 
